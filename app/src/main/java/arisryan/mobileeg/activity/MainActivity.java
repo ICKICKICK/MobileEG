@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }else{
                         content[i] = message.getContent().toString();
                     }*/
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < 15; i++) {
                     Message message = messages[i];
                     /*int ID = message.getMessageNumber();
                     Address[] fromAddress = message.getFrom();

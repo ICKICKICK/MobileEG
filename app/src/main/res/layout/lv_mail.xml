@@ -52,7 +52,6 @@
         android:layout_below="@+id/date"
         android:visibility="invisible" />
 
-
     <TextView
         android:id="@+id/subject"
         android:layout_width="wrap_content"

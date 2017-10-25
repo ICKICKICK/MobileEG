@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
@@ -37,6 +38,7 @@ public class BacaEmail extends AppCompatActivity implements View.OnClickListener
     TextView forward;
     TextView replyall;
     ImageButton unduhAttachment;
+    CardView cvAttach;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class BacaEmail extends AppCompatActivity implements View.OnClickListener
         txtSubject = (TextView) findViewById(R.id.subject);
         txtContent = (TextView) findViewById(R.id.content);
         //starToggle = (ToggleButton) findViewById(R.id.tb_star_detail);
-        //txtAttachment = (TextView) findViewById(R.id.attach);
+        txtAttachment = (TextView) findViewById(R.id.tv_attach);
         txtDate = (TextView) findViewById(R.id.date);
         reply = (TextView) findViewById(R.id.btnReply);
         forward = (TextView) findViewById(R.id.btnForward);
@@ -67,7 +69,13 @@ public class BacaEmail extends AppCompatActivity implements View.OnClickListener
         txtFrom.setText(String.valueOf(strFrom));
         txtSubject.setText(strSubject);
         txtContent.setText(Html.fromHtml(strContent));
-        //txtAttachment.setText(Html.fromHtml(strAttachment));
+        txtAttachment.setText(Html.fromHtml(strAttachment));
+        cvAttach = (CardView) findViewById(R.id.cv_attach);
+        if (txtAttachment.getText().toString().isEmpty()){
+            cvAttach.setVisibility(View.GONE);
+        } else {
+            cvAttach.setVisibility(View.VISIBLE);
+        }
         try{
         txtDate.setText(String.valueOf(strDate));}
         catch (Exception e){
